@@ -117,13 +117,13 @@
 }
 
 .slideAway {
-    transition: 1.5s ease;
+    transition: 0.8s ease;
     transform: translate(-150%);
     
 }
 
 .hidden {
-    transition: 2s ease;
+    /*transition: 2s ease;*/
     display: none;
     /*transform: translate(150%);*/
 }

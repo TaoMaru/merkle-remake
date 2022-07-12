@@ -33,20 +33,26 @@ function changeBgImg() {
 };
 
 //changeBgImg();
+
+for(let aSlide of slides) {
+    aSlide.addEventListener("transitionend", () => {
+        aSlide.classList.add("hidden"),
+        aSlide.classList.remove("slideAway"),
+        aSlide.classList.add("visible")
+    });
+};
+
 const slidesArray = Array.from(slides);
 let nextSlide = 0;
 
 function switchSlides() {
-    
-    slidesArray[nextSlide].classList.remove("visible");
+
+    let previousSlide = slidesArray[nextSlide];
 
     console.log(slidesArray[nextSlide]);
 
     slidesArray[nextSlide].classList.add("slideAway");
     console.log(slidesArray[nextSlide]);
-
-    slidesArray[nextSlide].addEventListener("transitionend",
-        slidesArray[nextSlide].classList.add("hidden"));
 
     nextSlide++;
     if(nextSlide === 6) {
@@ -54,11 +60,10 @@ function switchSlides() {
     };
     console.log(slidesArray[nextSlide]);
 
-    slidesArray[nextSlide].classList.remove("hidden");
-    slidesArray[nextSlide].classList.add("visible");
-    
-    slidesArray[nextSlide].addEventListener("transitionend",
-        slidesArray[nextSlide].classList.remove("slideAway"));
+    previousSlide.addEventListener("transitionend", () => {
+        slidesArray[nextSlide].classList.remove("hidden")
+    }
+    );
 
     setTimeout(switchSlides, 6500);
         
@@ -69,7 +74,7 @@ function switchSlides() {
 
 function changeSlidesWithDelay() {
     setTimeout(switchSlides, 6500);
-}
+};
 
 
 

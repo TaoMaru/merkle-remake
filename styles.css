@@ -1,3 +1,7 @@
+:root {
+    --carouselBgImgUrl: url("#");
+}
+
 * {
     box-sizing: border-box;
 }
@@ -108,8 +112,32 @@
     position: relative;
 }
 
-.revealNewImg {
-    transition: 0.8 ease;
+.visible {
+    transition: 2s ease;
+}
+
+.slideAway {
+    transition: 1.5s ease;
+    transform: translate(-150%);
+    
+}
+
+.hidden {
+    transition: 2s ease;
+    display: none;
+    /*transform: translate(150%);*/
+}
+
+.carouselSlide {
+    color: white;
+    height: 550px;
+    width: 100%;
+    background-image: var(--carouselBgImgUrl);
+    background-position: 70% 0 ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 60%;
+    position: relative;
 }
 
 .carousel {
@@ -121,6 +149,30 @@
     width: 100%;
     background-color: black;
     opacity: 0.5;
+}
+
+.slide1 {
+    background-image: url("assets/pexels-fernanda-latronico-763849.jpg");
+}
+
+.slide2 {
+    background-image: url("assets/pexels-tim-douglas-6205492.jpg");
+}
+
+.slide3 {
+    background-image: url("assets/pexels-jin-h-4215123.jpg");
+}
+
+.slide4 {
+    background-image: url("assets/pexels-annam-w-1047442.jpg");    
+}
+
+.slide5 {
+    background-image: url("assets/pexels-andrea-piacquadio-3771088.jpg");
+}
+
+.slide6 {
+    background-image: url("assets/pexels-george-dolgikh-giftpunditscom-2072168.jpg");
 }
 
 .carouselHeadline {

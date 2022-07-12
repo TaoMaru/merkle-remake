@@ -117,19 +117,20 @@
 }
 
 .slideAway {
-    transition: 0.8s ease;
+    transition: 1s ease;
     transform: translate(-150%);
     
 }
 
 .sideline {
-    offset-position: 150%;
-    offset-distance: 100%;
+    position: absolute;
+    transform: translate(100%);
 }
 
 .slideIn {
-    transition: 0.8s ease;
-    transform: translate(0);
+    transition-delay: 1.5s;
+    transition: 1s ease;
+    transform: translate(0%);
 }
 
 .hidden {
@@ -195,7 +196,13 @@
     margin-right: auto;
     margin-top: 10%;
     width: 40%;
-    
+}
+
+.carouselHeadline span {
+    font-size: 30px;
+    display: block;
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 .carouselPara {

@@ -60,14 +60,12 @@ function switchSlides() {
     };
     console.log(slidesArray[nextSlide]);
 
-    //slidesArray[nextSlide].classList.remove("hidden");
     previousSlide.addEventListener("transitionend", () => {
         slidesArray[nextSlide].classList.remove("hidden"),
         slidesArray[nextSlide].classList.remove("sideline")
+        //slidesArray[nextSlide].classList.add("slideIn")
     });
 
-    //slidesArray[nextSlide].classList.remove("hidden");
-    //slidesArray[nextSlide].classList.add("slideIn");
 
     setTimeout(switchSlides, 6500);
         

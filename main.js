@@ -60,6 +60,7 @@ function switchSlides() {
     };
     console.log(slidesArray[nextSlide]);
 
+    //slidesArray[nextSlide].classList.remove("hidden");
     previousSlide.addEventListener("transitionend", () => {
         slidesArray[nextSlide].classList.remove("hidden"),
         slidesArray[nextSlide].classList.remove("sideline")

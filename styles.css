@@ -122,6 +122,15 @@
     
 }
 
+.sideline {
+    transform: translate(150%);
+}
+
+.slideIn {
+    transition: 0.8s ease;
+    transform: translate(0);
+}
+
 .hidden {
     /*transition: 2s ease;*/
     display: none;

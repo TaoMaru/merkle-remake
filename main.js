@@ -37,8 +37,8 @@ function changeBgImg() {
 for(let aSlide of slides) {
     aSlide.addEventListener("transitionend", () => {
         aSlide.classList.add("hidden"),
-        aSlide.classList.remove("slideAway"),
-        aSlide.classList.add("visible")
+        aSlide.classList.remove("slideAway")
+        //aSlide.classList.add("visible")
     });
 };
 
@@ -61,9 +61,12 @@ function switchSlides() {
     console.log(slidesArray[nextSlide]);
 
     previousSlide.addEventListener("transitionend", () => {
-        slidesArray[nextSlide].classList.remove("hidden")
-    }
-    );
+        slidesArray[nextSlide].classList.remove("hidden"),
+        slidesArray[nextSlide].classList.remove("sideline")
+    });
+
+    //slidesArray[nextSlide].classList.remove("hidden");
+    //slidesArray[nextSlide].classList.add("slideIn");
 
     setTimeout(switchSlides, 6500);
         

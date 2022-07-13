@@ -34,18 +34,27 @@ function changeBgImg() {
 
 //changeBgImg();
 
-for(let aSlide of slides) {
-    aSlide.addEventListener("transitionend", () => {
-        aSlide.classList.add("hidden"),
-        aSlide.classList.remove("slideAway")
+//for(let aSlide of slides) {
+ //   aSlide.addEventListener("transitionend", () => {
+  //      aSlide.classList.add("hidden"),
+   //     aSlide.classList.remove("slideAway")
         //aSlide.classList.add("visible")
-    });
-};
+    //});
+//};
 
 const slidesArray = Array.from(slides);
 let nextSlide = 0;
 
+let slideInID;
+let removeSlideInOutID;
+let removeSidelineID;
+
 function switchSlides() {
+
+    
+    clearTimeout(slideInID);
+
+    clearTimeout(removeSidelineID);
 
     let previousSlide = slidesArray[nextSlide];
 
@@ -54,18 +63,25 @@ function switchSlides() {
     slidesArray[nextSlide].classList.add("slideAway");
     console.log(slidesArray[nextSlide]);
 
+    removeSlideInOut;
+
     nextSlide++;
     if(nextSlide === 6) {
         nextSlide = 0;
     };
     console.log(slidesArray[nextSlide]);
 
-    previousSlide.addEventListener("transitionend", () => {
-        slidesArray[nextSlide].classList.remove("hidden"),
-        slidesArray[nextSlide].classList.remove("sideline")
+    //previousSlide.addEventListener("transitionend", () => {
+      //  slidesArray[nextSlide].classList.remove("hidden")
+        //slidesArray[nextSlide].classList.remove("sideline")
         //slidesArray[nextSlide].classList.add("slideIn")
-    });
+    //});
+    slidesArray[nextSlide].classList.remove("hidden");
+    //slidesArray[nextSlide].classList.add("slideIn");
 
+    slideInID = setTimeout(bringSlideIn, 50);
+    
+    removeSidelineID = setTimeout(removeSideline, 4450);
 
     setTimeout(switchSlides, 6500);
         
@@ -74,10 +90,22 @@ function switchSlides() {
 
 //switchSlides();
 
+function removeSideline() {
+    slidesArray[nextSlide].classList.remove("sideline");
+}
+
+function removeSlideInOut() {
+    slidesArray[nextSlide].classList.remove("slideIn");
+    slidesArray[nextSlide].classList.remove("slideAway");
+    //slidesArray[nextSlide].classList.add("hidden");
+};
+
 function changeSlidesWithDelay() {
     setTimeout(switchSlides, 6500);
 };
 
-
+function bringSlideIn() {
+    slidesArray[nextSlide].classList.add("slideIn");
+}
 
 changeSlidesWithDelay();

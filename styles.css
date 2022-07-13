@@ -124,13 +124,13 @@
 
 .sideline {
     position: absolute;
-    transform: translate(100%);
+    /*transform: translate(100%);*/
+    margin-left: 200%;
 }
 
 .slideIn {
-    transition-delay: 1.5s;
     transition: 1s ease;
-    transform: translate(0%);
+    transform: translate(-100%);
 }
 
 .hidden {
@@ -148,7 +148,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 60%;
-    position: relative;
+    position: absolute;
 }
 
 .carousel {

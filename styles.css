@@ -225,6 +225,37 @@ body {
     margin-top: -30%;
 }
 
+.ourWorkBtn {
+    border: 2px solid white;
+    width: 8%;
+    height: 8%;
+    text-align: left;
+        
+    padding: 8px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    margin-left: 15%;
+    
+    display: flex;
+}
+
+.ourWorkBtn span {
+    flex: 1 1 auto;
+
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.ourWorkBtn>img {
+    flex: 0 1 auto;
+
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    margin-right: 5%;
+}
+
 .blogContainer {
     display: flex;
     justify-content: space-between;

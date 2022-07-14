@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .pageContainer {
     width: 100%;
     height: auto;

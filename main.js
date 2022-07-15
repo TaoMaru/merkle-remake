@@ -49,8 +49,8 @@ let slideInID;
 let removeSlideInOutID;
 let removeSidelineID;
 let removeSlideAwayID;
-let slideTimeoutTime = 0.1;
-let removeSidelineTimeoutTime = 5000;
+let slideTimeoutTime = 0.0001;
+let removeSidelineTimeoutTime = 0.1;
 let removeSlideAwayTimeoutTime = 2000;
 
 let previousSlide;
@@ -58,12 +58,6 @@ let previousSlide;
 function switchSlides() {
     
     clearAllTimeouts();
-
-   // if(previousSlide !== undefined) {
-    //    previousSlide.classList.remove("slideIn");
-     //   previousSlide.classList.add("sideLine");
-      //  previousSlide.classList.add("hidden");
-    //};
 
     if(previousSlide !== undefined && 
         previousSlide.classList.contains("slideAway") ) {
@@ -78,7 +72,7 @@ function switchSlides() {
 
     console.log(slidesArray[nextSlide]);
 
-    //slidesArray[nextSlide].classList.add("slideAway");
+    
     moveSlideOut();
     console.log(slidesArray[nextSlide]);
 
@@ -88,22 +82,19 @@ function switchSlides() {
     };
     console.log(slidesArray[nextSlide]);
 
-    //previousSlide.addEventListener("transitionend", () => {
-      //  slidesArray[nextSlide].classList.remove("hidden")
-        //slidesArray[nextSlide].classList.remove("sideline")
-        //slidesArray[nextSlide].classList.add("slideIn")
-    //});
     if(previousSlide.classList.contains("slideAway")) {
         slidesArray[nextSlide].classList.remove("hidden");
+        //slidesArray[nextSlide].classList.add("slideIn");
+        //slideInID = setTimeout(bringSlideIn, slideTimeoutTime);
+        removeSidelineID = setTimeout(removeSideline, removeSidelineTimeoutTime);
     };
-    //slidesArray[nextSlide].classList.add("slideIn");
 
-    slideInID = setTimeout(bringSlideIn, slideTimeoutTime);
+    //slideInID = setTimeout(bringSlideIn, slideTimeoutTime);
     
     
-    removeSidelineID = setTimeout(removeSideline, removeSidelineTimeoutTime);
+    //removeSidelineID = setTimeout(removeSideline, removeSidelineTimeoutTime);
 
-    //removeSlideAwayID = setTimeout(removeSlideAway, removeSlideAwayTimeoutTime);
+    
 
     setTimeout(switchSlides, 6500);
         
@@ -118,6 +109,7 @@ function moveSlideOut() {
 
 function removeSideline() {
     slidesArray[nextSlide].classList.remove("sideline");
+    slidesArray[nextSlide].classList.add("visible");
 }
 
 function removeSlideInOut() {
@@ -143,9 +135,8 @@ function bringSlideIn() {
 function clearAllTimeouts() {
     clearTimeout(slideInID);
     
-    clearTimeout(removeSidelineID);
+    //clearTimeout(removeSidelineID);
     
-    //clearTimeout(removeSlideAwayID);
 }
 
 changeSlidesWithDelay();

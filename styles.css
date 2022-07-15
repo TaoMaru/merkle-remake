@@ -118,11 +118,12 @@ body {
 }
 
 .visible {
-    transition: 2s ease;
+    transition: 1s;
+    
 }
 
 .slideAway {
-    transition: 1s ease;
+    transition: 1s;
     transform: translate(-150%);
     
 }
@@ -134,7 +135,7 @@ body {
 }
 
 .slideIn {
-    transition: 1s ease;
+    transition: 0.8s ease;
     transform: translate(-100%);
 }
 

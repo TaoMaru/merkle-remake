@@ -118,12 +118,12 @@ body {
 }
 
 .visible {
-    transition: 1s;
+    transition: 1s ease;
     
 }
 
 .slideAway {
-    transition: 1s;
+    transition: 1.9s ease;
     transform: translate(-150%);
     
 }

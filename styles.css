@@ -115,6 +115,8 @@ body {
     background-size: cover;
     background-position-y: 60%;*/
     position: relative;
+
+    overflow-x: hidden;
 }
 
 .visible {

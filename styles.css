@@ -121,11 +121,12 @@ body {
 
 .visible {
     transition: 1s ease;
-    
+    transition-delay: 10ms;
 }
 
 .slideAway {
     transition: 1.9s ease;
+    transition-delay: 280ms;
     transform: translate(-150%);
     
 }
